@@ -97,11 +97,11 @@ optional arguments:
 - No need to retrain the model when running the program
 - Make a bigger dataset
 
-### TIẾNG VIỆT
+# TIẾNG VIỆT
 
-# Mô tả: Đây là một hệ thống nhận diện và phân loại biển báo giao thông trên video sử dụng OpenCV. Quá trình nhận diện sử dụng các kỹ thuật xử lý ảnh để tạo ra các đường viền trên mỗi khung hình video và tìm tất cả các hình elip hoặc hình tròn trong các đường viền đó. Các hình này được đánh dấu là ứng viên cho biển báo giao thông.
+### Mô tả: Đây là một hệ thống nhận diện và phân loại biển báo giao thông trên video sử dụng OpenCV. Quá trình nhận diện sử dụng các kỹ thuật xử lý ảnh để tạo ra các đường viền trên mỗi khung hình video và tìm tất cả các hình elip hoặc hình tròn trong các đường viền đó. Các hình này được đánh dấu là ứng viên cho biển báo giao thông.
 
-# Cấu trúc hệ thống:
+### Cấu trúc hệ thống:
 
 Có 3 tệp Python là 3 modules chính: main.py, classification.py, và common.py.
 
@@ -119,24 +119,24 @@ Thư mục [Dataset](dataset) chứa các hình ảnh để huấn luyện mô h
 Tập dữ liệu được tạo bằng cách áp dụng giai đoạn phát hiện trên nhiều video với nhiều thông số khác nhau để đánh dấu tất cả các biển báo giao thông, sau đó tách chúng thành các lớp phù hợp theo cách thủ công.
 Mỗi lần chạy chương trình, tập dữ liệu có thể được cập nhật bằng cách kiểm tra tất cả hình ảnh đã cắt của các biển báo giao thông được phát hiện, sau đó tìm tất cả các biển báo giao thông bị phân loại sai.
 
-# Yêu cầu:
+### Yêu cầu:
 
-Python 3.5
-OpenCV3
-Imutils
+- Python 3.5
+- OpenCV3
+- Imutils
 
-# Cài đặt:
+### Cài đặt:
 
 Có hai cách chạy chương trình: sử dụng các đối số mặc định hoặc sử dụng đối số tùy chỉnh.
 
 Kết quả: Hình ảnh minh họa kết quả của hệ thống nhận diện và phân loại biển báo giao thông trên video.
 
-# Nhược điểm:
+## Nhược điểm:
 
 -Xử lý ảnh tĩnh, điều này có nghĩa là các tham số phải được cập nhật cho mỗi video với các điều kiện ánh sáng khác nhau.
 -Độ chính xác của quá trình nhận diện không cao, vẫn bỏ sót biển báo hoặc phát hiện các khu vực sai.
 
-# Cải tiến trong tương lai:
+## Cải tiến trong tương lai:
 
 -Hiệu suất tốt hơn với tốc độ khung hình cao hơn.
 -Sử dụng các phương pháp khác như YOLO hoặc SSD.
@@ -145,7 +145,7 @@ Kết quả: Hình ảnh minh họa kết quả của hệ thống nhận diện
 -Không cần phải huấn luyện lại mô hình khi chạy chương trình.
 -Tạo ra một tập dữ liệu lớn hơn.
 
-[classification.py](classification.py)
+# [classification.py](classification.py)
 File này chứa mã nguồn cho việc huấn luyện mô hình SVM để phân loại các biển báo giao thông dựa trên hình ảnh. Dưới đây là tóm tắt các phần chính:
 
 - Import thư viện và định nghĩa tham số: Import các thư viện cần thiết như OpenCV, NumPy, Matplotlib và định nghĩa các thông số như kích thước ảnh (SIZE) và số lượng lớp biển báo giao thông (CLASS_NUMBER).
@@ -154,7 +154,7 @@ File này chứa mã nguồn cho việc huấn luyện mô hình SVM để phân
 - Class StatModel và SVM: Các lớp này được sử dụng để tải và lưu mô hình SVM. Mô hình SVM được sử dụng để phân loại hình ảnh biển báo giao thông sau khi đã được huấn luyện.
 - Các hàm training(), getLabel(): Hàm training() được sử dụng để huấn luyện mô hình SVM sử dụng dữ liệu từ hàm load_traffic_dataset() và các đặc trưng HOG (Histogram of Oriented Gradients). Hàm getLabel() được sử dụng để dự đoán nhãn của một hình ảnh biển báo giao thông sử dụng mô hình SVM đã được huấn luyện.
 
-[common.py](common.py):
+# [common.py](common.py):
 File này chứa các hàm và lớp phổ biến được sử dụng bởi các mã mẫu khác trong OpenCV. Dưới đây là tóm tắt các phần chính:
 
 - Các hàm tiện ích:
@@ -180,7 +180,7 @@ clock(): Hàm trả về thời gian hiện tại.
 Timer: Context manager để đo thời gian thực thi.
 Và các hàm tiện ích khác như draw_keypoints, mosaic, grouper, mdot.
 
-[main.py](main.py):
+# [main.py](main.py):
 Tập lệnh Python được cung cấp là một chương trình để phát hiện và vị trí hóa biển báo giao thông trong video. Dưới đây là một tóm tắt về các thành phần chính và chức năng của nó:
 
 - Thư viện được Import:Chương trình import các thư viện cần thiết như cv2, numpy, matplotlib.pyplot, imutils, argparse, os, và math.
@@ -238,7 +238,7 @@ Trong đoạn mã trên, mô hình SVM được sử dụng để phân loại c
 
 - Lưu mô hình: Sau khi huấn luyện và đánh giá, mô hình SVM có thể được lưu vào một tệp để sử dụng sau này mà không cần huấn luyện lại từ đầu. Điều này giúp tiết kiệm thời gian và công sức khi triển khai mô hình trong các ứng dụng thực tế.
 
-# trích xuất đặc trưng
+# Trích xuất đặc trưng
 
 Trong các đoạn mã, có hai phương pháp quan trọng để trích xuất đặc trưng từ hình ảnh là HOG (Histogram of Oriented Gradients) và LOG (Laplacian of Gaussian).
 
