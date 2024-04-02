@@ -249,6 +249,4 @@ Trong các đoạn mã, có hai phương pháp quan trọng để trích xuất 
   - Sau đó, mỗi hình ảnh đầu vào được chuyển đổi thành biểu diễn HOG bằng cách sử dụng phương thức compute() của đối tượng HOG descriptor.
   - Kết quả là một vectơ đặc trưng HOG cho mỗi hình ảnh, được sử dụng trong quá trình huấn luyện và dự đoán của mô hình SVM.
 
-- Laplacian of Gaussian (LOG): + Trong hàm LaplacianOfGaussian(image) trong đoạn mã, hình ảnh đầu vào trước tiên được làm mờ bằng bộ lọc Gaussian để giảm nhiễu và tăng cường kết cấu. + Sau đó, hình ảnh được chuyển đổi sang ảnh đen trắng và được áp dụng bộ lọc Laplacian để phát hiện cạnh. + Kết quả là một hình ảnh cạnh đã được phát hiện, trong đó các đặc trưng cạnh quan trọng được nổi bật và sẽ được sử dụng trong quá trình xử lý hình ảnh tiếp theo, chẳng hạn như việc xác định vùng quan trọng hoặc phân loại các đối tượng.#   T r a f f i c * S i g n * D e t e c t i o n 
-   
-   \*\*
+- Laplacian of Gaussian (LOG): + Trong hàm LaplacianOfGaussian(image) trong đoạn mã, hình ảnh đầu vào trước tiên được làm mờ bằng bộ lọc Gaussian để giảm nhiễu và tăng cường kết cấu. + Sau đó, hình ảnh được chuyển đổi sang ảnh đen trắng và được áp dụng bộ lọc Laplacian để phát hiện cạnh. + Kết quả là một hình ảnh cạnh đã được phát hiện, trong đó các đặc trưng cạnh quan trọng được nổi bật và sẽ được sử dụng trong quá trình xử lý hình ảnh tiếp theo, chẳng hạn như việc xác định vùng quan trọng hoặc phân loại các đối tượng.
